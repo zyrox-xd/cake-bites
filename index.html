@@ -1689,7 +1689,7 @@
                     
                     <!-- Birthday Cakes -->
                     <div class="gallery-item" data-category="birthday">
-                        <img src="https://t3.ftcdn.net/jpg/01/10/26/34/360_F_110263419_6d9oWmooHp0tLqQrG6ypqQk7KRqxIkSE.jpg" alt="Kids Birthday Cake">
+                        <img src="https://t3.ft">
                         <div class="item-overlay">
                             <h3 class="item-title">Rainbow Fantasy</h3>
                             <span class="item-tag">Birthday</span>
@@ -1777,10 +1777,27 @@
                     <div class="order-form">
                         <h3>Order Form</h3>
                         <form
-                        action="https://formspree.io/f/xyzjajvy"method="POST">
+                        id="cakeOrderForm"
+                        action="https://formsubmit.co/1sha2arif2@gmail.com"
+                        method="POST">
                             <div class="form-group">
+                                <label for="customerName">Your Name</label>
+                                <input type="text" id="customerName" name="Customer Name" placeholder="
+                                Enter your full name" required>
+                                <div class="form-error" id="nameError">Please enter your name</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Your Email</label>
+                                <input type="email" id="customerEmail" name="Customer Email" placeholder="Enter your email address" required>
+                                <div class="form-error" id="emailError">Please enter a valid email</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Your Phone</label>
+                                <input type="tel" id="customerPhone" name="Customer Phone" placeholder="Enter your phone number" required>
+                                <div class="form-error" id="phoneError">Please enter a valid phone number</div>
+                            </div>
                                 <label for="cakeType">Cake Type</label>
-                                <select id="cakeType" required>
+                                <select id="cakeType" name="Cake Type" required>
                                     <option value="">Select a cake type</option>
                                     <option value="custom">Custom Cake</option>
                                     <option value="birthday">Birthday Cake</option>
@@ -1794,7 +1811,7 @@
                             
                             <div class="form-group">
                                 <label for="size">Size (Kgs)</label>
-                                <select id="size" required>
+                                <select id="size" name="Size" required>
                                     <option value="">Select size in kilograms</option>
                                     <option value="0.5">0.5 kg (4-6 servings)</option>
                                     <option value="1">1 kg (8-10 servings)</option>
@@ -1808,7 +1825,7 @@
                             
                             <div class="form-group">
                                 <label for="flavor">Flavor</label>
-                                <select id="flavor" required>
+                                <select id="flavor" name="Flavor" required>
                                     <option value="">Select flavor</option>
                                     <option value="vanilla">Vanilla</option>
                                     <option value="chocolate">Chocolate</option>
@@ -1820,15 +1837,14 @@
                             
                             <div class="form-group">
                                 <label for="deliveryDate">Delivery/Pickup Date</label>
-                                <input type="date" id="deliveryDate" required>
+                                <input type="date" id="deliveryDate" name="Delivery Date" required>
                                 <div class="form-error" id="dateError">Please select a date</div>
                             </div>
                             
                             <div class="form-group">
                                 <label for="specialRequests">Special Requests</label>
-                                <textarea id="specialRequests" placeholder="Tell us about your design ideas, dietary restrictions, or any other special requests"></textarea>
+                                <textarea id="specialRequests" name="Special Requests" placeholder="Tell us about your design ideas, dietary restrictions, or any other special requests"></textarea>
                             </div>
-                            
                             <button type="submit" class="btn">Submit Order Request</button>
                         </form>
                     </div>
@@ -1845,7 +1861,6 @@
                 <p class="section-subtitle">What our customers are saying</p>
                 
                 <div class="testimonials-container fade-in">
-                    <div class="testimonial-card">
                         <p class="testimonial-text">"Shaira created the most beautiful wedding cake for our special day! Not only was it stunning, but it tasted absolutely divine. Our guests couldn't stop raving about it!"</p>
                         <div class="testimonial-author">
                             <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
@@ -2210,9 +2225,6 @@
         const flavor = document.getElementById('flavor');
         const deliveryDate = document.getElementById('deliveryDate');
         
-        orderForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let isValid = true;
             
             // Reset errors
             document.querySelectorAll('.form-error').forEach(error => {
@@ -2243,12 +2255,6 @@
                 isValid = false;
             }
             
-            if (isValid) {
-                // Show success message
-                alert('Thank you for your order request! We will contact you shortly to confirm your order details.');
-                orderForm.reset();
-            }
-        });
         
         // Loading screen
         window.addEventListener('load', () => {
