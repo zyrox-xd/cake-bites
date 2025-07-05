@@ -888,7 +888,7 @@
         }
 
         .testimonial-card::before {
-            content: """;
+            content: "“";
             position: absolute;
             top: -30px;
             left: 20px;
@@ -1378,7 +1378,7 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo" onclick="showPage('home')"><i class="fas fa-birthday-cake"></i>_cakes<span>bites</span></a>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
             <nav>
@@ -1677,7 +1677,8 @@
                                 </select>
                                 <div class="form-error" id="cakeTypeError">Please select a cake type</div>
                             </div>
-                            
+
+
                             <div class="form-group">
                                 <label for="size">Size/Servings</label>
                                 <select id="size" required>
@@ -1690,6 +1691,7 @@
                                 <div class="form-error" id="sizeError">Please select a size</div>
                             </div>
                             
+
                             <div class="form-group">
                                 <label for="flavor">Flavor</label>
                                 <select id="flavor" required>
@@ -1704,12 +1706,14 @@
                                 <div class="form-error" id="flavorError">Please select a flavor</div>
                             </div>
                             
+
                             <div class="form-group">
                                 <label for="deliveryDate">Delivery/Pickup Date</label>
                                 <input type="date" id="deliveryDate" required>
                                 <div class="form-error" id="dateError">Please select a date</div>
                             </div>
                             
+
                             <div class="form-group">
                                 <label for="specialRequests">Special Requests</label>
                                 <textarea id="specialRequests" placeholder="Tell us about your design ideas, dietary restrictions, or any other special requests"></textarea>
